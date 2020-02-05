@@ -57,7 +57,7 @@ PixyNode::PixyNode() :
 		node_handle_(),
 		private_node_handle_("~"),
 		use_servos_(false),
-		rate_(50.0)
+		rate_(10.0)
 {
 
 	private_node_handle_.param<std::string>(std::string("frame_id"), frame_id,
