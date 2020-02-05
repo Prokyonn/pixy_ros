@@ -9,6 +9,8 @@ find_package(catkin REQUIRED COMPONENTS
 	message_generation
 	roscpp
 	tf
+	angles
+	pixy_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -87,6 +89,7 @@ find_package ( libusb-1.0 REQUIRED )
 catkin_package(
   INCLUDE_DIRS libpixyusb/include libpixyusb/common
   LIBRARIES pixyusb
+  CATKIN_DEPENDS message_runtime
 #  CATKIN_DEPENDS other_catkin_pkg
 #  DEPENDS system_lib
 )
@@ -97,7 +100,7 @@ catkin_package(
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
-include_directories(include libpixyusb/include libpixyusb/common  ${LIBUSB_1_INCLUDE_DIRS})
+include_directories(include libpixyusb/include libpixyusb/common  ${LIBUSB_1_INCLUDE_DIRS} ${catkin_INCLUDE_DIRS})
 
 ## Declare a cpp library
 # add_library(pixy_ros
